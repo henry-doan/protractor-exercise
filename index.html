@@ -1,32 +1,87 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Demo</title>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	    <meta name="description" content="Demo project">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
-		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-		<style type="text/css"></style>
-	</head>
-	<body ng-app="app">
-		<div class="container" ng-controller="MyCtrl">
-			<ul class="nav nav-pills">
-			  <li role="presentation" class="active"><a class="nav-option" href="#">Home</a></li>
-			  <li role="presentation"><a class="nav-option" href="#">Profile</a></li>
-			  <li role="presentation"><a class="nav-option" href="#">Messages</a></li>
-			</ul>
 
-			<pre>{{http://apis.is/concerts}}</pre>
-			<!--<ul>
-				<li ng-repeat="Maps">
-					<h4>{{maps.timestamp}}</h4>
-				</li>
-			</ul>-->
-		</div>
-	</body>
-	<script type="text/javascript" src="app.js"></script>
-	<script type="text/javascript" src="spec.js"></script>
+<head>
+    <title>Iceland Concert</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Demo project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <style type="text/css"></style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body style="background:#60DFFF" ng-app="app">
+    <div class="container" ng-controller="MyCtrl">
+        <!-- Buttons -->
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a class="nav-option" href="#FFFAB8">Concerts</a></li>
+            <li role="presentation"><a class="nav-option" href="#">Tickets</a></li>
+            <li role="presentation"><a class="nav-option" href="#">Contact Us</a></li>
+        </ul>
+        <br>
+
+        <div class="row" style=" color: #FFFAB8" ng-repeat="concert in concerts">
+            <div class="col-sm-3">
+                <ul class="headlileft">
+                    <li class="list-group-item" style="background: #85FFBF">
+
+                        <!-- Pulling all the data  -->
+                        <img src="{{ concert.imageSource }}">
+                        <div>{{ concert.eventDateName }}</div>
+                        <div>{{ concert.dateOfShow }}</div>
+                        <div>{{ concert.eventHallName }}</div>
+                        <div>{{ concert.name }}</div>
+                        <div>{{ concert.userGroupName }}</div>
+
+
+                    </li>
+                </ul>
+            </div>
+        
+       
+            <div class="col-sm-3">
+                <ul class="headlileft">
+                    <li class="list-group-item" style="background: #85FFBF">
+
+                        <!-- Pulling all the data  -->
+                        <img src="{{ concert.imageSource }}">
+                        <div>{{ concert.eventDateName }}</div>
+                        <div>{{ concert.dateOfShow }}</div>
+                        <div>{{ concert.eventHallName }}</div>
+                        <div>{{ concert.name }}</div>
+                        <div>{{ concert.userGroupName }}</div>
+
+
+                    </li>
+                </ul>
+            </div> 
+            <div class="col-sm-3">
+                <ul class="headlileft">
+                    <li class="list-group-item" style="background: #85FFBF">
+
+                        <!-- Pulling all the data  -->
+                        <img src="{{ concert.imageSource }}">
+                        <div>{{ concert.eventDateName }}</div>
+                        <div>{{ concert.dateOfShow | date :format :medium}}</div>
+                        <div>{{ concert.eventHallName }}</div>
+                        <div>{{ concert.name }}</div>
+                        <div>{{ concert.userGroupName }}</div>
+
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+    </div>
+</body>
+<script type="text/javascript" src="app.js"></script>
+<!--<script type="text/javascript" src="spec.js"></script>-->
+
 </html>
